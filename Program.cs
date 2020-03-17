@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace LabExam1Final
+namespace LabExam1
 {
     class Program
     {
@@ -13,13 +13,6 @@ namespace LabExam1Final
         static double tip = 0D;
         static readonly string[] items = { "Prime Rib", "Fried Chicken", "Baked Haddock", "Soda" };
         static readonly double[] prices = { 13.99, 8.49, 9.99, 1.99 };
-        /*static readonly object[,] menu = new object[2, 4]
-        {
-            { "Prime Rib", "Fried Chicken", "Baked Haddock", "Soda"},
-            { 13.99, 8.49, 9.99, 1.99}
-        };
-        */
-
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -103,15 +96,14 @@ namespace LabExam1Final
         }
         private static int GetSelection()
         {
-            int sel = 0;
-            bool isGood = false;
-            while (!isGood)
+            int sel;
+            while (true)
             {
                 try
                 {
                     Console.Write("  Please make a selection: ");
                     sel = Convert.ToInt32(Console.ReadLine());
-                    isGood = true;
+                    break;
                 }
                 catch
                 {
@@ -124,15 +116,14 @@ namespace LabExam1Final
         }
         private static int GetQuantity()
         {
-            int qty = 0;
-            bool isGood = false;
-            while (!isGood)
+            int qty;
+            while (true)
             {
                 try
                 {
                     Console.Write("  Please enter a quantity: ");
                     qty = Convert.ToInt32(Console.ReadLine());
-                    isGood = true;
+                    break;
                 }
                 catch
                 {
